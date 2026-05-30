@@ -27,28 +27,28 @@ const slugify = (url: string) =>
   tags={trip.data.tags}
 >
   <Header />
-  <div class='relative w-full flex items-center justify-center overflow-hidden bg-black -mt-24'>
-    <div class='relative h-96'>
-      <Image src={trip.data.image} class='w-full object-cover opacity-50' alt={trip.data.title} />
+  <div class="bg-black flex w-full items-center justify-center relative overflow-hidden -mt-24">
+    <div class="h-96 relative">
+      <Image src={trip.data.image} class="opacity-50 w-full object-cover" alt={trip.data.title} />
     </div>
   </div>
-  <div class='relative z-10 mx-auto max-w-4xl bg-white px-12 pt-12 -mt-32 lg:px-24'>
-    <h2 class='flex items-center text-xs text-neutral-600 tracking-widest uppercase'>
-      <a href={'/place/' + slugify(trip.data.place)} class='hover:text-pink'>
-        <span class='i-fa6-solid-globe h-4 w-4'></span>
-        <span class='ml-1'>{trip.data.place}</span>
+  <div class="mx-auto px-12 pt-12 bg-white max-w-4xl relative z-10 -mt-32 lg:px-24">
+    <h2 class="text-xs text-neutral-600 tracking-widest flex uppercase items-center">
+      <a href={'/place/' + slugify(trip.data.place)} class="hover:text-pink">
+        <span class="i-fa6-solid-globe h-4 w-4"></span>
+        <span class="ml-1">{trip.data.place}</span>
       </a>
-      <span class='i-fa6-solid-angles-right mx-4 h-4 w-4'></span>
-      <span class='i-fa6-solid-location-arrow h-4 w-4'></span>
-      <span class='ml-1'>{trip.data.location}</span>
+      <span class="i-fa6-solid-angles-right mx-4 h-4 w-4"></span>
+      <span class="i-fa6-solid-location-arrow h-4 w-4"></span>
+      <span class="ml-1">{trip.data.location}</span>
     </h2>
-    <h1 class='font-display mt-4 text-2xl text-gray-900 md:text-3xl'>
+    <h1 class="font-display text-2xl text-gray-900 mt-4 md:text-3xl">
       {trip.data.title}
     </h1>
     <Tags tags={trip.data.tags} />
-    <div class='my-2 flex items-center text-neutral-600'>
-      <span class='i-fa6-solid-calendar-days h-4 w-4'></span>
-      <span class='ml-1'>
+    <div class="text-neutral-600 my-2 flex items-center">
+      <span class="i-fa6-solid-calendar-days h-4 w-4"></span>
+      <span class="ml-1">
         {
           new Date(trip.data.start).toLocaleString('en-AU', {
             dateStyle: 'long',
@@ -56,8 +56,8 @@ const slugify = (url: string) =>
           })
         }
       </span>
-      <span class='i-fa6-solid-arrow-right mx-1 h-4 w-4'></span>
-      <span class='ml-1'>
+      <span class="i-fa6-solid-arrow-right mx-1 h-4 w-4"></span>
+      <span class="ml-1">
         {
           new Date(trip.data.end).toLocaleString('en-AU', {
             dateStyle: 'long',
@@ -67,10 +67,10 @@ const slugify = (url: string) =>
       </span>
     </div>
 
-    <div class='prose-sm lg:prose-lg mt-6 italic prose sm:prose'>
+    <div class="mt-6 italic prose prose-sm sm:prose lg:prose-lg">
       {trip.data.description}
     </div>
-    <hr class='h-1 w-full border-0 rounded bg-pink-200' />
+    <hr class="border-0 rounded bg-pink-200 h-1 w-full" />
   </div>
   <slot />
   <Footer />

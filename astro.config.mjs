@@ -1,8 +1,8 @@
-import UnoCSS from 'unocss/astro'
+import UnoCSS from '@unocss/astro'
 import markdoc from '@astrojs/markdoc'
 import alpine from '@astrojs/alpinejs'
 import { defineConfig } from 'astro/config'
-import { SiteMetadata } from 'astro-travelens/config'
+import { SiteMetadata } from './src/common/config.ts'
 
 // https://astro.build/config
 export default defineConfig({
